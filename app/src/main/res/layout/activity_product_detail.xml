@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.application.nikestore.data.entity.Product" />
+
+        <import type="com.application.nikestore.common.UtilsKt" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl">
+
+        <com.application.nikestore.view.scroll.ObservableScrollView
+            android:id="@+id/observableScrollView"
+            android:layout_width="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.application.nikestore.view.NikeImageView
+                        android:id="@+id/productImageView"
+                        loadImageWithUrl="@{product.image}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:viewAspectRatio="1.3" />
+                </FrameLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/previousPriceProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@{UtilsKt.formatPrice(product.previous_price)}"
+                        android:textAppearance="?textAppearanceBody2"
+                        android:textColor="?android:textColorSecondary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1000000" />
+
+                    <TextView
+                        android:id="@+id/priceProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@{UtilsKt.formatPrice(product.price)}"
+                        android:textAppearance="?textAppearanceBody1"
+                        app:layout_constraintEnd_toEndOf="@+id/previousPriceProduct"
+                        app:layout_constraintTop_toBottomOf="@+id/previousPriceProduct"
+                        tools:text="50000" />
+
+                    <TextView
+                        android:id="@+id/titleTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        tools:text="محصول تستی"
+                        android:minLines="2"
+                        android:text="@{product.title}"
+                        android:textAppearance="?textAppearanceHeadline6"
+                        app:layout_constraintEnd_toStartOf="@+id/previousPriceProduct"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:text="@string/contentProduct"
+                    android:textAppearance="?textAppearanceBody2" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:text="@string/comments"
+                        android:textAppearance="?textAppearanceHeadline6"
+                        android:textColor="?android:textColorSecondary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center_vertical"
+                        android:text="@string/addComment" />
+                </FrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/background_comment"
+                    android:clipToPadding="false"
+                    android:orientation="vertical" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/showAllCommentBtn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="@string/allComments"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.application.nikestore.view.scroll.ObservableScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:translationZ="5dp">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/ic_back" />
+
+            <ImageView
+                android:id="@+id/FavoriteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/ic_heart_24" />
+        </FrameLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/toolberView"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:alpha="0"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="4dp">
+
+            <TextView
+                android:id="@+id/titleToolbarTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_marginStart="48dp"
+                android:text="@{product.title}"
+                android:textAppearance="?textAppearanceHeadline6" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/addToCartFab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/iran_yekan_bold"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:textAppearance="?textAppearanceBody1"
+            android:gravity="center"
+            android:text="@string/addToCart" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

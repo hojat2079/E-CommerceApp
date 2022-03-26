@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.application.nikestore">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/image_nike"
+        android:label="@string/appName"
+        android:roundIcon="@drawable/image_nike"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NikeStore"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".feature.favorite.FavoriteProductActivity"></activity>
+        <activity
+            android:name=".feature.shipping.ShippingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.checkout.CheckOutActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="expertdevelopers.ir"
+                    android:pathPattern="/appCheckout"
+                    android:scheme="nike" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".feature.auth.AuthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NikeStore.AuthTheme" />
+        <activity
+            android:name=".feature.list.ProductListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.product.comment.CommentListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.product.ProductDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

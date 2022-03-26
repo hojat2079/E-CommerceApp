@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/ic_nike_logo"
+            app:tint="?colorOnSecondary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/signUpTitleTxt"
+            android:textAppearance="?textAppearanceHeadline5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?textAppearanceBody1"
+            android:text="@string/authHint" />
+
+        <EditText
+            android:layout_width="@dimen/authViewWidth"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:id="@+id/emailEt"
+            android:imeOptions="actionNext"
+            android:gravity="center_vertical|right"
+            style="@style/Theme.NikeStore.AuthTheme.EditText"
+            android:layout_marginTop="24dp"
+            android:hint="@string/email" />
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:id="@+id/passwordEt"
+                style="@style/Theme.NikeStore.AuthTheme.EditText"
+                android:layout_width="@dimen/authViewWidth"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|right"
+                android:hint="@string/password"
+                android:paddingLeft="48dp"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_marginEnd="16dp"
+                android:id="@+id/isShowingPasswordIcon"
+                app:srcCompat="@drawable/ic_eye_off"
+                android:layout_gravity="end|center_vertical"
+                android:layout_height="20dp" />
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="@dimen/authViewWidth"
+            android:id="@+id/registerBtn"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16sp"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:text="@string/signUp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textAppearance="?textAppearanceBody1"
+            android:layout_height="wrap_content"
+            android:alpha="0.4"
+            android:text="@string/loginHint" />
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:text="@string/loginTitleBtn"
+            android:id="@+id/loginLinkBtn"
+            android:fontFamily="@font/iran_yekan_bold"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

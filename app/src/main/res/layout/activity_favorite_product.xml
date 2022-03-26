@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    tools:context=".feature.favorite.FavoriteProductActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="?colorOnPrimary">
+
+        <com.application.nikestore.view.NikeToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nt_title="@string/favoriteList">
+
+            <ImageView
+                android:id="@+id/infoIv"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="16dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/todo"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_info" />
+
+        </com.application.nikestore.view.NikeToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/FavoriteProductRv"
+        android:layout_width="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

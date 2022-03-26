@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/ic_nike" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:id="@+id/searchEt"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:autofillHints="@string/search"
+                    android:background="@drawable/background_et_search"
+                    android:hint="@string/search"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:paddingStart="54dp"
+                    android:paddingEnd="54dp"
+                    android:textColor="?colorOnSurface"
+                    android:textColorHint="?android:textColorSecondary"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="38dp"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/ic_search" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/closeIV"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:visibility="gone"
+                    android:layout_marginEnd="38dp"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/ic_close" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/bannerSliderViewPager2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" />
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/SliderIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="12dp"
+                    app:dotsColor="#E0DCDC"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="5dp"
+                    app:dotsSpacing="3dp"
+                    app:dotsWidthFactor="4"
+                    app:progressMode="false"
+                    app:selectedDotColor="@color/black" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/latest"
+                    android:textAppearance="?textAppearanceHeadline6"
+                    android:textColor="?android:textColorSecondary" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/showAllLatestProductBtn"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:text="@string/viewAll" />
+
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/latestProductRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/popular"
+                    android:textAppearance="?textAppearanceHeadline6"
+                    android:textColor="?android:textColorSecondary" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/showAllPopularProductBtn"
+                    android:layout_gravity="end|center_vertical"
+                    android:text="@string/viewAll" />
+
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/popularProductRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+               />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

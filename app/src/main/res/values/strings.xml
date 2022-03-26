@@ -1,0 +1,68 @@
+<resources>
+    <string name="appName">NikeStore</string>
+    <string name="profile">اطلاعات کاربری</string>
+    <string name="home">خانه</string>
+    <string name="cart">سبد خرید</string>
+    <string name="todo">TODO</string>
+    <string name="search">جستجو</string>
+    <string name="latest">جدیدترین</string>
+    <string name="viewAll">مشاهده همه</string>
+    <string name="popular">پربازدیدترین</string>
+    <string name="addComment">اضافه کردن نظر</string>
+    <string name="comments"> نظرات کاربران</string>
+    <string name="allComments">مشاهده همه نظرات</string>
+    <string name="contentProduct">این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.این یک محصول تستی و فقط برای تست است و ارزش آن به شدت تستی است.</string>
+    <string name="listProduct">لیست محصولات</string>
+    <string name="sort">مرتب سازی</string>
+    <string name="sortPriceLowToHigh">گران ترین</string>
+    <string name="sortPriceLHighToLow">ارزان ترین</string>
+    <string name="addToCart">اضافه کردن به سبد خرید</string>
+    <string name="unknownError">خطای نامشخص</string>
+    <string name="successAddToCart">به سبد خرید اضافه شد</string>
+
+    <string-array name="sort">
+        <item>@string/latest</item>
+        <item>@string/popular</item>
+        <item>@string/sortPriceLowToHigh</item>
+        <item>@string/sortPriceLHighToLow</item>
+    </string-array>
+    <string name="loginTitleTxt">ورود به حساب کاربری</string>
+    <string name="singOut">خروج از حساب کاربری</string>
+    <string name="signUpTitleTxt">ایجاد حساب کاربری</string>
+    <string name="loginTitleBtn">ورود</string>
+    <string name="authHint">ایمیل و رمزعبور خود را وارد کنید</string>
+    <string name="email">ایمیل</string>
+    <string name="password">رمزعبور</string>
+    <string name="signUp">ثبت نام</string>
+    <string name="singUpHint">حساب کاربری ندارید؟</string>
+    <string name="loginHint">قبلا ثبت نام کردید؟</string>
+    <string name="pay">پرداخت</string>
+    <string name="count">تعداد</string>
+    <string name="removeFromCart">حذف از سبد خرید</string>
+    <string name="purchaseDetail">جزئیات خرید</string>
+    <string name="totalPrice">مبلغ کل خرید</string>
+    <string name="shippingCost">هزینه ارسال</string>
+    <string name="payablePrice">مبلغ قابل پرداخت</string>
+    <string name="titleEmptyStateNoLogin">وارد حساب کاربری خود شوید!</string>
+    <string name="actionBtnEmptyStateNoLogin">ورود به حساب کاربری</string>
+    <string name="titleEmptyStateIsLogin">هیچ خبری اینجا نیست!</string>
+    <string name="shippingToolbarTitle">انتخاب تحویل گیرنده و شیوه پرداخت</string>
+    <string name="onlinePayment">پرداخت آنلاین</string>
+    <string name="cashOnDelivery">پرداخت در محل</string>
+    <string name="firstName">نام</string>
+    <string name="lastName">نام خانوادگی</string>
+    <string name="zipCode">کد پستی</string>
+    <string name="phoneNumber">شماره موبایل</string>
+    <string name="address">آدرس</string>
+    <string name="checkoutToolbarTitle">رسید پرداخت</string>
+    <string name="returnToHome">بازگشت به صفحه اصلی</string>
+    <string name="orderHistory">سوابق سفارش</string>
+    <string name="purchaseStatus">وضعیت سفارش</string>
+    <string name="price">مبلغ</string>
+    <string name="successfulPurchase">پرداخت با موفقیت انجام شد</string>
+    <string name="unsuccessfulPurchase">خرید ناموفق</string>
+    <string name="favoriteList">لیست علاقه مندی ها</string>
+    <string name="guestUser">کاربر مهمان</string>
+    <string name="es_favorite_title">هنوز چیزی به علاقه مندی ها اضافه نکردی</string>
+    <string name="deleteFromFavorites">برای حذف محصول عکس محصول را نگه دارید</string>
+</resources>

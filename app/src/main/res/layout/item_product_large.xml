@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.application.nikestore.data.entity.Product" />
+
+        <import type="com.application.nikestore.common.UtilsKt" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layoutDirection="rtl">
+
+        <com.application.nikestore.view.NikeImageView
+            android:id="@+id/productIv"
+            loadImageWithUrl="@{product.image}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:viewAspectRatio="0.8"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/productTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@{product.title }"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/productPreviousPriceTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="نام کالا" />
+
+        <TextView
+            android:id="@+id/productPreviousPriceTv"
+            android:layout_width="wrap_content"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@{UtilsKt.formatPrice(product.previous_price)}"
+            android:textAppearance="?textAppearanceBody2"
+            android:textColor="?android:textColorSecondary"
+            app:layout_constraintBottom_toTopOf="@id/productCurrentPriceTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="قیمت قبلی" />
+
+        <TextView
+            android:id="@+id/productCurrentPriceTv"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@{UtilsKt.formatPrice(product.price)}"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="@+id/productIv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="قیمت جدید" />
+
+        <ImageView
+
+            android:id="@+id/favoriteBtn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/favorite_background"
+            android:contentDescription="@string/todo"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_heart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

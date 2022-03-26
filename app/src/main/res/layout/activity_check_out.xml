@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="checkout"
+            type="com.application.nikestore.data.entity.Checkout" />
+
+        <import type="com.application.nikestore.common.UtilsKt" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        tools:context=".feature.checkout.CheckOutActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?colorOnPrimary">
+
+            <com.application.nikestore.view.NikeToolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:nt_title="@string/checkoutToolbarTitle" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="32dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/background_comment">
+
+                <TextView
+                    android:id="@+id/DetailPayingTitleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:textStyle="bold"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/iran_yekan_bold"
+                    android:text="@{checkout.purchase_success? @string/successfulPurchase : @string/unsuccessfulPurchase}"
+                    android:textAppearance="?textAppearanceHeadline6"
+                    android:textColor="?colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/successfulPurchase" />
+
+                <TextView
+                    android:id="@+id/purchaseStatusTitleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/purchaseStatus"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textColor="?android:textColorSecondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/DetailPayingTitleTv" />
+
+                <TextView
+                    android:id="@+id/priceTitleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/price"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textColor="?android:textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@id/purchaseStatusTitleTv"
+                    app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+                <TextView
+                    android:id="@+id/purchaseStatusTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="@font/iran_yekan_bold"
+                    android:text="@{checkout.payment_status}"
+                    android:textAppearance="?textAppearanceBody1"
+                    app:layout_constraintBottom_toBottomOf="@id/purchaseStatusTitleTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/purchaseStatusTitleTv"
+                    tools:text="موفق" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="?dividerColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/purchaseStatusTitleTv" />
+
+                <TextView
+                    android:id="@+id/priceTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{UtilsKt.formatPrice(checkout.payable_price)}"
+                    android:textAppearance="?textAppearanceBody1"
+                    app:layout_constraintBottom_toBottomOf="@id/priceTitleTv"
+                    app:layout_constraintEnd_toEndOf="@id/purchaseStatusTv"
+                    app:layout_constraintTop_toTopOf="@id/priceTitleTv"
+                    tools:text="10000" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/returnToHomeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/iran_yekan_bold"
+                    android:text="@string/returnToHome" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/orderHistoryBtn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/iran_yekan_bold"
+                    android:text="@string/orderHistory" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

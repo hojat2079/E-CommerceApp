@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="comment"
+            type="com.application.nikestore.data.entity.Comment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl">
+
+        <TextView
+            android:id="@+id/commentTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:gravity="right"
+            android:text="@{comment.title}"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintEnd_toStartOf="@+id/dateCommentTv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="خوبه" />
+
+        <TextView
+            android:id="@+id/authorCommentTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{comment.author.email }"
+            android:textAppearance="?textAppearanceBody2"
+            android:textColor="?android:textColorSecondary"
+            app:layout_constraintStart_toStartOf="@+id/commentTitleTv"
+            app:layout_constraintTop_toBottomOf="@+id/commentTitleTv"
+            tools:text="حجت قنبرزاده" />
+
+        <TextView
+            android:id="@+id/dateCommentTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{comment.date}"
+            android:textAppearance="?textAppearanceBody2"
+            android:textColor="?android:textColorSecondary"
+            app:layout_constraintBottom_toBottomOf="@+id/commentTitleTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="جمعه 20 اردیبهشت 1400" />
+
+        <TextView
+            android:id="@+id/contentCommentTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="right"
+            android:text="@{comment.content}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintEnd_toEndOf="@+id/dateCommentTv"
+            app:layout_constraintStart_toStartOf="@+id/authorCommentTv"
+            app:layout_constraintTop_toBottomOf="@+id/authorCommentTv"
+            tools:text="واقعا یکی از بهترین کفش هاییه که تا حالا دیدم خیلی خوبه" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="?dividerColor"
+            app:layout_constraintTop_toBottomOf="@id/contentCommentTv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="purchaseDetail"
+            type="com.application.nikestore.data.entity.PurchaseDetail" />
+        <import type="com.application.nikestore.common.UtilsKt" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:padding="8dp"
+            android:text="@string/purchaseDetail"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:textColor="?android:textColorSecondary" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:id="@+id/titleTotalTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/totalPrice"
+                    android:textAppearance="?textAppearanceBody1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleShippingCostTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/shippingCost"
+                    android:textAppearance="?textAppearanceBody1"
+                    app:layout_constraintStart_toStartOf="@id/titleTotalTv"
+                    app:layout_constraintTop_toBottomOf="@id/titleTotalTv" />
+
+                <TextView
+                    android:id="@+id/titlePayableTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/payablePrice"
+                    android:textAppearance="?textAppearanceBody1"
+                    app:layout_constraintStart_toStartOf="@id/titleShippingCostTv"
+                    app:layout_constraintTop_toBottomOf="@id/titleShippingCostTv" />
+
+                <TextView
+                    android:id="@+id/totalPriceTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/iran_yekan_bold"
+                    android:text="@{UtilsKt.formatPrice(purchaseDetail.total_price)}"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/titleTotalTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/titleTotalTv"
+                    tools:text="13212312" />
+
+                <TextView
+                    android:id="@+id/shippingCostTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/iran_yekan_bold"
+                    android:text="@{UtilsKt.formatPrice(purchaseDetail.shipping_cost)}"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/titleShippingCostTv"
+                    app:layout_constraintEnd_toEndOf="@id/totalPriceTV"
+                    app:layout_constraintTop_toTopOf="@id/titleShippingCostTv"
+                    tools:text="13212312" />
+
+                <TextView
+                    android:id="@+id/payablePriceTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/iran_yekan_bold"
+                    android:text="@{UtilsKt.formatPrice(purchaseDetail.payable_price)}"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/titlePayableTv"
+                    app:layout_constraintEnd_toEndOf="@id/shippingCostTV"
+                    app:layout_constraintTop_toTopOf="@id/titlePayableTv"
+                    tools:text="13212312" />
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="?dividerColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleTotalTv" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="?dividerColor"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleShippingCostTv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</layout>

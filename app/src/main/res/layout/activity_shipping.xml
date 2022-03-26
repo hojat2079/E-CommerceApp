@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        style="@style/Theme.NikeStore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?colorOnPrimary">
+
+            <com.application.nikestore.view.NikeToolbar
+                android:id="@+id/shippingToolbarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:nt_title="@string/shippingToolbarTitle" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="32dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ShippingListFirstNameEtl"
+                    style="@style/ShippingTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shippingListFirstNameEt"
+                        style="@style/ShippingTextInputEditTextStyle"
+                        android:maxLines="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/firstName"
+                        android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ShippingListLastNameEtl"
+                    style="@style/ShippingTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shippingListLastNameEt"
+                        style="@style/ShippingTextInputEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:hint="@string/lastName"
+                        android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ShippingListZipCodeEtl"
+                    style="@style/ShippingTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shippingZipCodeNameEt"
+                        style="@style/ShippingTextInputEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/zipCode"
+                        android:maxLines="1"
+                        android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ShippingListMobileNumberEtl"
+                    style="@style/ShippingTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shippingListMobileNumberEt"
+                        style="@style/ShippingTextInputEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:hint="@string/phoneNumber"
+                        android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ShippingListAddressEtl"
+                    style="@style/ShippingTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shippingListAddressEt"
+                        style="@style/ShippingTextInputEditTextStyle"
+                        android:drawableEnd="@drawable/ic_gps"
+                        android:layout_width="match_parent"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/address"
+                        android:imeOptions="actionDone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <include
+                    android:id="@+id/purchaseDetailView"
+                    layout="@layout/item_purchase_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/codBtn"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/iran_yekan_bold"
+                        android:textStyle="bold"
+                        android:text="@string/cashOnDelivery" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/onlinePaymentBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/iran_yekan_bold"
+                        android:text="@string/onlinePayment" />
+
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

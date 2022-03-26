@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.application.nikestore.data.entity.Product" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl">
+
+        <com.application.nikestore.view.NikeImageView
+            android:id="@+id/FavoriteProductIv"
+            loadImageWithUrl="@{product.image}"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundedCornerRadius="8dp" />
+
+        <TextView
+            android:id="@+id/favoriteProductTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{product.title}"
+            android:textAppearance="?textAppearanceBody1"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/FavoriteProductIv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/FavoriteProductIv"
+            app:layout_constraintTop_toTopOf="@id/FavoriteProductIv"
+            tools:text="محصول شماره ۱" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
