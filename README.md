@@ -2,7 +2,7 @@
 
 This is an e-commerce application implemented with mvvm architecture.
 
-In this application, a library and concepts have been used:
+In this application, the following library and concepts have been used:
 - MVVM Architecture
 - Repository Pattern
 - Koin for Dependency Injection
